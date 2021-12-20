@@ -1,4 +1,4 @@
-### My Portfolio 
+ My Portfolio 
 
 <p align="center">
 <img src="https://avatars.githubusercontent.com/u/24706805?v=4" alt="" width="250px" width="250px"/>
@@ -8,8 +8,8 @@
 
 <br />
 
-#### Contacts:
--  ## Email ameen.jalolov@gmail.com
+## Contacts:
+- Email ameen.jalolov@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/muhammad-amin-jalolov-60b83a187/)
 - [Facebook](https://www.facebook.com/muhammadamin.jalolov/)
 - [Website](https://www.aminjalolov.com/)
