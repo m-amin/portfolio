@@ -8,7 +8,7 @@
 
 <br />
 
-## Contacts scroll:
+## Contacts:
 - [Email](ameen.jalolov@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/muhammad-amin-jalolov-60b83a187/)
 - [Facebook](https://www.facebook.com/muhammadamin.jalolov/)
