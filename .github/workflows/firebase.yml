@@ -15,14 +15,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - name: Run Tests
-        env:
-          CI: true
-        run: npm test
-      - name: Build
-        run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
-        with:
+      env:
+        CI: true
+      run: npm test
+    - name: Build
+      run: npm run build
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@v2
+      with:
           name: build
           path: build
   deploy:
