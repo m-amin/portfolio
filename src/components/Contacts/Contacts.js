@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -21,7 +20,7 @@ import {
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
-
+import emailjs from 'emailjs-com';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import { socialsData } from '../../data/socialsData';
@@ -39,7 +38,7 @@ function Contacts() {
     const [errMsg, setErrMsg] = useState('');
 
     const { theme } = useContext(ThemeContext);
-
+    const form = useRef();
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -47,6 +46,27 @@ function Contacts() {
 
         setOpen(false);
     };
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_jxj0cj6', 'template_7is6c9c', e.target, 'user_qVwRw0zuEu8h3NOkc0Ywh')
+          .then((result) => {
+              console.log(result.text);
+              console.log('success');
+              setSuccess(true);
+              setErrMsg('');
+
+              setName('');
+              setEmail('');
+              setMessage('');
+              setOpen(false);
+          }, (error) => {
+              console.log(error.text);
+              
+          });
+          e.target.reset();
+      };
 
     const useStyles = makeStyles((t) => ({
         input: {
@@ -140,17 +160,7 @@ function Contacts() {
                     email: email,
                     message: message,
                 };
-
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
-                    setSuccess(true);
-                    setErrMsg('');
-
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                    setOpen(false);
-                });
+                sendEmail()
             } else {
                 setErrMsg('Invalid email');
                 setOpen(true);
@@ -171,7 +181,7 @@ function Contacts() {
                 <h1 style={{ color: theme.primary }}>Contacts</h1>
                 <div className='contacts-body'>
                     <div className='contacts-form'>
-                        <form onSubmit={handleContactForm}>
+                        <form ref={form} onSubmit={sendEmail}>
                             <div className='input-container'>
                                 <label htmlFor='Name' className={classes.label}>
                                     Name

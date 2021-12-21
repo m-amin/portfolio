@@ -10,6 +10,7 @@ import eatvo from '../assets/svg/projects/eatvo.svg'
 import panaszok from '../assets/svg/projects/panaszok.svg'
 import email from '../assets/svg/projects/email.svg'
 import bird from '../assets/svg/projects/bird.svg'
+import galaxy from '../assets/svg/projects/galaxy.svg'
 
 
 export const projectsData = [
@@ -43,7 +44,7 @@ export const projectsData = [
     {
         id: 4,
         projectName: 'Mad Birds',
-        projectDesc: 'Simple desktop game',
+        projectDesc: 'Simple Desktop Game',
         tags: ['C#', 'Unity'],
         code: 'https://github.com/m-amin/mad-birds',
         demo: 'https://github.com/m-amin/mad-birds',
@@ -51,12 +52,12 @@ export const projectsData = [
     },
     {
         id: 5,
-        projectName: '',
-        projectDesc: '',
-        tags: [''],
-        code: '',
-        demo: '',
-        image: ''
+        projectName: 'Galaxy Warriors',
+        projectDesc: 'Simple Unity Game',
+        tags: ['C#, Unity'],
+        code: 'https://github.com/m-amin/galaxy-warrior',
+        demo: 'https://github.com/m-amin/galaxy-warrior',
+        image: galaxy
     },
     {
         id: 6,
