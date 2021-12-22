@@ -1,11 +1,3 @@
-import one from '../assets/svg/projects/one.svg'
-import two from '../assets/svg/projects/two.svg'
-import three from '../assets/svg/projects/three.svg'
-import four from '../assets/svg/projects/four.svg'
-import five from '../assets/svg/projects/five.svg'
-import six from '../assets/svg/projects/six.svg'
-import seven from '../assets/svg/projects/seven.svg'
-import eight from '../assets/svg/projects/eight.svg'
 import eatvo from '../assets/svg/projects/eatvo.svg'
 import panaszok from '../assets/svg/projects/panaszok.svg'
 import email from '../assets/svg/projects/email.svg'
@@ -19,7 +11,7 @@ export const projectsData = [
         projectName: 'Eatvo',
         projectDesc: 'Eatvo is a online grocery delivery application where users can order their needs to their home, office or even to their favorite parks',
         tags: ['Flutter', 'Dart', 'GetX', 'Firebase'],
-        code: '',
+        code: 'https://play.google.com/store/apps/details?id=com.ggbhazhoz.android',
         demo: 'https://play.google.com/store/apps/details?id=com.ggbhazhoz.android',
         image: eatvo
     },
@@ -28,7 +20,7 @@ export const projectsData = [
         projectName: 'Complaints Application',
         projectDesc: 'Mobile Aaplication for resolving users complaints',
         tags: ['Flutter', 'Dart'],
-        code: '',
+        code: 'https://apps.apple.com/us/app/panaszokcom/id1474547437',
         demo: 'https://apps.apple.com/us/app/panaszokcom/id1474547437',
         image: panaszok
     },
@@ -59,33 +51,33 @@ export const projectsData = [
         demo: 'https://github.com/m-amin/galaxy-warrior',
         image: galaxy
     },
-    {
-        id: 6,
-        projectName: '',
-        projectDesc: '',
-        tags: [''],
-        code: '',
-        demo: '',
-        image: ''
-    },
-    {
-        id: 7,
-        projectName: '',
-        projectDesc: '',
-        tags: [''],
-        code: '',
-        demo: '',
-        image: ''
-    },
-    {
-        id: 8,
-        projectName: '',
-        projectDesc: '',
-        tags: [''],
-        code: '',
-        demo: '',
-        image: ''
-    },
+    // {
+    //     id: 6,
+    //     projectName: '',
+    //     projectDesc: '',
+    //     tags: [''],
+    //     code: '',
+    //     demo: '',
+    //     image: ''
+    // },
+    // {
+    //     id: 7,
+    //     projectName: '',
+    //     projectDesc: '',
+    //     tags: [''],
+    //     code: '',
+    //     demo: '',
+    //     image: ''
+    // },
+    // {
+    //     id: 8,
+    //     projectName: '',
+    //     projectDesc: '',
+    //     tags: [''],
+    //     code: '',
+    //     demo: '',
+    //     image: ''
+    // },
 ]
 
 

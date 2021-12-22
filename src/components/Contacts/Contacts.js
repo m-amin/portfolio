@@ -49,24 +49,35 @@ function Contacts() {
 
     const sendEmail = (e) => {
         e.preventDefault();
-    
-        emailjs.sendForm('service_jxj0cj6', 'template_7is6c9c', e.target, 'user_qVwRw0zuEu8h3NOkc0Ywh')
-          .then((result) => {
-              console.log(result.text);
-              console.log('success');
-              setSuccess(true);
-              setErrMsg('');
 
-              setName('');
-              setEmail('');
-              setMessage('');
-              setOpen(false);
-          }, (error) => {
-              console.log(error.text);
-              
-          });
-          e.target.reset();
-      };
+
+        if (name && email && message) {
+            if (isEmail(email)) {
+                emailjs.sendForm('service_jxj0cj6', 'template_7is6c9c', e.target, 'user_qVwRw0zuEu8h3NOkc0Ywh')
+                    .then((result) => {
+                        console.log(result.text);
+                        console.log('success');
+                        setSuccess(true);
+                        setErrMsg('');
+
+                        setName('');
+                        setEmail('');
+                        setMessage('');
+                        setOpen(false);
+                    }, (error) => {
+                        console.log(error.text);
+
+                    });
+            } else {
+                setErrMsg('Invalid email');
+                setOpen(true);
+            }
+        } else {
+            setErrMsg('Enter all the fields');
+            setOpen(true);
+        }
+        e.target.reset();
+    };
 
     const useStyles = makeStyles((t) => ({
         input: {
@@ -149,27 +160,6 @@ function Contacts() {
     }));
 
     const classes = useStyles();
-
-    const handleContactForm = (e) => {
-        e.preventDefault();
-
-        if (name && email && message) {
-            if (isEmail(email)) {
-                const responseData = {
-                    name: name,
-                    email: email,
-                    message: message,
-                };
-                sendEmail()
-            } else {
-                setErrMsg('Invalid email');
-                setOpen(true);
-            }
-        } else {
-            setErrMsg('Enter all the fields');
-            setOpen(true);
-        }
-    };
 
     return (
         <div
@@ -334,7 +324,7 @@ function Contacts() {
                                     <FaTwitter aria-label='Twitter' />
                                 </a>
                             )}
-                             {socialsData.facebook && (
+                            {socialsData.facebook && (
                                 <a
                                     href={socialsData.facebook}
                                     target='_blank'
@@ -356,7 +346,7 @@ function Contacts() {
                             )}
                             {socialsData.linkedIn && (
                                 <a
-                                    href={socialsData.linkFedIn}
+                                    href={socialsData.linkedIn}
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
